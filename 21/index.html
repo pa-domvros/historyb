@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Μεσαιωνική και Νεότερη Ιστορία Β' Γυμνασίου</title>
+    <style>
+:root {
+    --coffee: #6F4E37;
+    --gold: #D4AF37;
+    --offwhite: #F5F5F5;
+    --beige: #F5F5DC; /* Add this new color variable */
+}
+.header-info {
+    background-color: var(--beige); /* Changed from #f8f9fa to beige */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border-left: 5px solid var(--coffee);
+    text-align: center;
+}
+
+.header-info h1 {
+    color: var(--coffee);
+    margin-bottom: 5px;
+    font-size: 1.8rem;
+}
+
+.header-info h2 {
+    color: var(--coffee);
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+.textbook-info {
+    margin: 15px 0;
+    padding: 10px;
+    background-color: rgba(245, 245, 220, 0.7); /* Semi-transparent beige */
+    border-radius: 5px;
+}
+
+.credits {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 15px;
+}
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #FDFDF6; /* Very light beige-white */
+            color: #333;
+        }
+        
+        .container {
+            max-width: 100%;
+            padding: 10px;
+        }
+        
+        h1 {
+            color: var(--coffee);
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .collapsible {
+            background-color: var(--coffee);
+            color: white;
+            cursor: pointer;
+            padding: 12px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1rem;
+            margin: 5px 0;
+            border-radius: 5px;
+            position: relative;
+        }
+        
+        .nested-collapsible {
+            background-color: var(--gold);
+            color: #333;
+            cursor: pointer;
+            padding: 10px;
+            width: 95%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 0.9rem;
+            margin: 5px 0 5px 5%;
+            border-radius: 5px;
+            position: relative;
+        }
+        
+        .sub-nested-collapsible {
+            background-color: #F5E8D0;
+            color: #333;
+            cursor: pointer;
+            padding: 8px;
+            width: 90%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 0.85rem;
+            margin: 5px 0 5px 10%;
+            border-radius: 5px;
+            position: relative;
+        }
+        
+        .active, .collapsible:hover {
+            background-color: #5a3e2d;
+        }
+        
+        .nested-active, .nested-collapsible:hover {
+            background-color: #c9a227;
+        }
+        
+        .sub-nested-active, .sub-nested-collapsible:hover {
+            background-color: #d8d8d8;
+        }
+        
+        .collapsible:after, .nested-collapsible:after, .sub-nested-collapsible:after {
+            content: '\002B';
+            color: white;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+        
+        .active:after, .nested-active:after, .sub-nested-active:after {
+            content: "\2212";
+        }
+        
+        .content {
+            padding: 0 15px;
+            display: none;
+            background-color: #F8F4E9;
+            margin-bottom: 5px;
+            border-radius: 0 0 5px 5px;
+        }
+        
+        .content.active {
+            display: block;
+        }
+        
+        .nested-content {
+            padding: 0 15px;
+            display: none;
+            background-color: #f9f9f9;
+            margin: 0 0 5px 5%;
+            width: 95%;
+            border-radius: 0 0 5px 5px;
+        }
+        
+        .nested-content.active {
+            display: block;
+        }
+        
+        .sub-nested-content {
+            padding: 0 15px;
+            display: none;
+            background-color: #EFE6D8;
+            margin: 0 0 5px 10%;
+            width: 90%;
+            border-radius: 0 0 5px 5px;
+        }
+        
+        .sub-nested-content.active {
+            display: block;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 5px;
+        }
+        
+        .hours {
+            float: right;
+            background-color: rgba(255, 255, 255, 0.3);
+            padding: 0 5px;
+            border-radius: 3px;
+            font-size: 0.8rem;
+        }
+        
+        .material {
+            background-color: #e6f7ff;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #1890ff;
+        }
+        
+        .activity {
+            background-color: #f6ffed;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #52c41a;
+        }
+        
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="header-info">
+    <h1>ΜΕΣΑΙΩΝΙΚΗ ΚΑΙ ΝΕΟΤΕΡΗ ΙΣΤΟΡΙΑ Β΄ ΓΥΜΝΑΣΙΟΥ</h1>
+    <h2>(Ημερήσιου και Εσπερινού)</h2>
+    <div class="textbook-info">
+        <p>Για τη διδασκαλία του μαθήματος στη Β΄ Γυμνασίου αξιοποιείται το σχολικό βιβλίο:</p>
+        <p><strong>Ιω. Δημητρούκα, Θουκ. Ιωάννου, Μεσαιωνική και Νεότερη Ιστορία, Β΄ Γυμνασίου, ΙΤΥΕ «ΔΙΟΦΑΝΤΟΣ».</strong></p>
+    </div>
+    <div class="credits">
+        <p>Δημιουργία / Επιμέλεια: Παναγιώτης Δόμβρος, Διευθυντής 1ου Γυμνασίου Πυλαίας ©2025-26</p>
+    </div>
+</div>
+        
+        <!-- ΚΕΦΑΛΑΙΟ ΠΡΩΤΟ -->
+        <button type="button" class="collapsible">ΚΕΦΑΛΑΙΟ ΠΡΩΤΟ: Οι πρώτοι αιώνες του Βυζαντίου (330-717)</button>
+        <div class="content">
+            <!-- Ι. Η ΜΕΤΕΞΕΛΙΞΗ ΤΟΥ ΡΩΜΑΪΚΟΥ ΚΡΑΤΟΥΣ -->
+            <button type="button" class="nested-collapsible">Ι. Η ΜΕΤΕΞΕΛΙΞΗ ΤΟΥ ΡΩΜΑΪΚΟΥ ΚΡΑΤΟΥΣ <span class="hours">2 ώρες</span></button>
+            <div class="nested-content">
+                <button type="button" class="sub-nested-collapsible">1. Από τη Ρώμη στη Νέα Ρώμη</button>
+                <div class="sub-nested-content">
+                    <p><strong>Διδασκαλία της ενότητας με έμφαση στα ακόλουθα σημεία:</strong></p>
+                    <ul>
+                        <li>Μέτρα του Κωνσταντίνου Α΄ για την ανόρθωση του κράτους</li>
+                        <li>Ίδρυση και φυσιογνωμία της Κωνσταντινούπολης</li>
+                        <li>Η θρησκευτική πολιτική του Κωνσταντίνου</li>
+                    </ul>
+                    <div class="material">
+                        <p><strong>Υποστηρικτικό υλικό:</strong></p>
+                        <ul>
+                            <li>Χάρτης του Ρωμαϊκού Κράτους, ώστε να συγκριθεί η θέση της Κωνσταντινούπολης με αυτή της Ρώμης</li>
+                            <li>Τοπογραφικός χάρτης της Κωνσταντινούπολης: <a href="http://www.fhw.gr/chronos/08/gr/gallery/main/others/frame/p2ap1.html" target="_blank">Βυζαντινή περίοδος</a></li>
+                            <li>Πηγές σχολικών βιβλίων:
+                                <ul>
+                                    <li>«Ανεξιθρησκία στην αυτοκρατορία: το Διάταγμα των Μεδιολάνων», 313 μ.Χ.</li>
+                                    <li>«Θρησκευτική στάση του Κωνσταντίνου»</li>
+                                </ul>
+                            </li>
+                            <li>Πηγή: <a href="http://www.ime.gr/chronos/08/gr/sources/economy.html" target="_blank">«Χρηματικές παροχές στις εκκλησίες από τον Mεγάλο Kωνσταντίνο»</a></li>
+                            <li>Πηγή: <a href="https://www.ime.gr/chronos/08/gr/sources/main/civilization.html" target="_blank">«Μια παράδοση για την κτίση της Κωνσταντινούπολης»</a></li>
+                        </ul>
+                    </div>
+                    <div class="activity">
+                        <p><strong>Προτεινόμενη Δραστηριότητα:</strong></p>
+                        <ul>
+                            <li>Ερώτηση 2 του βιβλίου</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ΙΙ. ΕΞΩΤΕΡΙΚΑ ΠΡΟΒΛΗΜΑΤΑ ΚΑΙ ΑΝΑΔΙΟΡΓΑΝΩΣΗ -->
+            <button type="button" class="nested-collapsible">ΙΙ. ΕΞΩΤΕΡΙΚΑ ΠΡΟΒΛΗΜΑΤΑ ΚΑΙ ΑΝΑΔΙΟΡΓΑΝΩΣΗ ΤΟΥ ΚΡΑΤΟΥΣ <span class="hours">4 ώρες</span></button>
+            <div class="nested-content">
+                <button type="button" class="sub-nested-collapsible">1. Ο Ιουστινιανός και το έργο του <span class="hours">2 ώρες</span></button>
+                <div class="sub-nested-content">
+                    <p><strong>Διδασκαλία της ενότητας με έμφαση στα ακόλουθα σημεία:</strong></p>
+                    <ul>
+                        <li>Η πολιτική του Ιουστινιανού</li>
+                        <li>Εσωτερική πολιτική</li>
+                        <li>Εξωτερική πολιτική</li>
+                        <li>Κτίσματα και Αγία Σοφία</li>
+                    </ul>
+                    <div class="material">
+                        <p><strong>Υποστηρικτικό υλικό:</strong></p>
+                        <ul>
+                            <li>Πηγές για τα γεγονότα της «Στάσης του Νίκα»</li>
+                            <li>Χάρτης μετακίνησης πληθυσμών και εγκατάστασης γερμανικών φύλων</li>
+                            <li>Χάρτης αποκατάστασης της ρωμαϊκής οικουμένης: <a href="https://byzantium.gr/empgrmaps.html" target="_blank">Χάρτες Βυζαντινής αυτοκρατορίας</a></li>
+                            <li><a href="http://photodentro.edu.gr/v/item/ds/8521/9311" target="_blank">«Στρατιωτικές επιχειρήσεις Ιουστινιανού»</a></li>
+                            <li>Εικόνες Αγίας Σοφίας: <a href="http://www.360tr.com/34_istanbul/ayasofya/english/" target="_blank">360° virtual tour</a></li>
+                            <li><a href="http://www.ime.gr/chronos/08/gr/sources/economy.html" target="_blank">«Ο ρόλος της ελληνικής γλώσσας»</a></li>
+                        </ul>
+                    </div>
+                    <div class="activity">
+                        <p><strong>Προτεινόμενες δραστηριότητες:</strong></p>
+                        <ul>
+                            <li>Ερωτήσεις 1 και 2 του βιβλίου</li>
+                            <li>Συζήτηση για τη σημασία της κωδικοποίησης του ρωμαϊκού δικαίου</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <button type="button" class="sub-nested-collapsible">2. Ο Ηράκλειος και η δυναστεία του (610-717) <span class="hours">2 ώρες</span></button>
+                <div class="sub-nested-content">
+                    <p><strong>Διδασκαλία της ενότητας με έμφαση στα ακόλουθα σημεία:</strong></p>
+                    <ul>
+                        <li>Το Βυζάντιο σε κρίση</li>
+                        <li>Η αντεπίθεση του Ηρακλείου</li>
+                        <li>Ο θεσμός των Θεμάτων</li>
+                        <li>Ο εξελληνισμός του κράτους</li>
+                    </ul>
+                    <div class="material">
+                        <p><strong>Υποστηρικτικό υλικό:</strong></p>
+                        <ul>
+                            <li>Χάρτης θεματικής οργάνωσης της Μ. Ασίας (7ος-9ος αι.)</li>
+                            <li>Πηγές σχολικού βιβλίου για θεματική οργάνωση</li>
+                            <li><a href="http://exploringbyzantium.gr/EKBMM/Page?name=ypomeleti&lang=gr&id=14&sub=613&level=1" target="_blank">«Ο στρατός», «Βυζαντινών πολεμικά»</a></li>
+                            <li><a href="http://exploringbyzantium.gr/EKBMM/Page?name=ypomeleti&lang=gr&id=14&sub=32&level=1" target="_blank">«Οχυρωματικά έργα»</a></li>
+                        </ul>
+                    </div>
+                    <div class="activity">
+                        <p><strong>Προτεινόμενη δραστηριότητα:</strong></p>
+                        <ul>
+                            <li>Ερώτηση 4 του βιβλίου</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ΚΕΦΑΛΑΙΟ ΔΕΥΤΕΡΟ -->
+        <button type="button" class="collapsible">ΚΕΦΑΛΑΙΟ ΔΕΥΤΕΡΟ: ΛΑΟΙ ΣΤΟΝ ΠΕΡΙΓΥΡΟ ΤΟΥ ΒΥΖΑΝΤΙΝΟΥ ΚΡΑΤΟΥΣ</button>
+        <div class="content">
+            <!-- Ι. Ο ΒΑΛΚΑΝΙΚΟΣ ΚΟΣΜΟΣ -->
+            <button type="button" class="nested-collapsible">Ι. Ο ΒΑΛΚΑΝΙΚΟΣ ΚΟΣΜΟΣ ΚΑΤΑ ΤΟΝ ΜΕΣΑΙΩΝΑ <span class="hours">1 ώρα</span></button>
+            <div class="nested-content">
+                <p><strong>Συνοπτική παρουσίαση των ενοτήτων:</strong></p>
+                <ul>
+                    <li>1. Οι Σλάβοι και η σχέση τους με το Βυζάντιο</li>
+                    <li>2. Οι Βούλγαροι και η σχέση τους με το Βυζάντιο</li>
+                </ul>
+                <div class="material">
+                    <p><strong>Υποστηρικτικό υλικό:</strong></p>
+                    <ul>
+                        <li>Χάρτες Σκλαβηνιών και βουλγαρικού κράτους</li>
+                        <li><a href="http://www.ime.gr/chronos/08/gr/sources/economy.html" target="_blank">«Οι Σλάβοι τον 6ο αιώνα»</a></li>
+                        <li><a href="http://photodentro.edu.gr/v/item/ds/8521/9386" target="_blank">«Οι Σλάβοι»</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- ΙΙ. Ο ΚΟΣΜΟΣ ΤΟΥ ΙΣΛΑΜ -->
+            <button type="button" class="nested-collapsible">ΙΙ. Ο ΚΟΣΜΟΣ ΤΟΥ ΙΣΛΑΜ ΚΑΤΑ ΤΗΝ ΠΕΡΙΟΔΟ ΤΟΥ ΜΕΣΑΙΩΝΑ <span class="hours">2 ώρες</span></button>
+            <div class="nested-content">
+                <p><strong>Διδασκαλία των ενοτήτων με έμφαση στα ακόλουθα σημεία:</strong></p>
+                <ul>
+                    <li>Ίδρυση και αρχές του Ισλάμ</li>
+                    <li>Η επέκταση των Αράβων - παράγοντες και συνέπειες</li>
+                    <li>Το εμπόριο των Αράβων</li>
+                    <li>Γράμματα και τέχνες</li>
+                    <li>Επίδραση του αραβικού πολιτισμού στην Ευρώπη</li>
+                </ul>
+                <div class="material">
+                    <p><strong>Υποστηρικτικό υλικό:</strong></p>
+                    <ul>
+                        <li>Χάρτης αραβικής επέκτασης</li>
+                        <li><a href="http://www.benaki.gr/index.asp?id=10107&lang=gr" target="_blank">«Ισλαμική τέχνη»</a></li>
+                        <li><a href="http://www.discoverislamicart.org/index.php" target="_blank">«Discover Islamic art»</a></li>
+                        <li><a href="http://photodentro.edu.gr/v/item/ds/8521/8973" target="_blank">«Πολιτιστικές επιδράσεις Βυζαντινών και Αράβων»</a></li>
+                    </ul>
+                </div>
+                <div class="activity">
+                    <p><strong>Προτεινόμενη δραστηριότητα:</strong></p>
+                    <ul>
+                        <li>Κατάρτιση πίνακα με τη συμβολή των Αράβων στον ευρωπαϊκό πολιτισμό</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ΚΕΦΑΛΑΙΟ ΤΡΙΤΟ -->
+        <button type="button" class="collapsible">ΚΕΦΑΛΑΙΟ ΤΡΙΤΟ: ΠΕΡΙΟΔΟΣ ΤΗΣ ΜΕΓΑΛΗΣ ΑΚΜΗΣ ΤΟΥ ΒΥΖΑΝΤΙΟΥ (717-1025)</button>
+        <div class="content">
+            <!-- Ι. ΠΑΓΙΩΣΗ ΤΗΣ ΒΥΖΑΝΤΙΝΗΣ ΚΥΡΙΑΡΧΙΑΣ -->
+            <button type="button" class="nested-collapsible">Ι. ΠΑΓΙΩΣΗ ΤΗΣ ΒΥΖΑΝΤΙΝΗΣ ΚΥΡΙΑΡΧΙΑΣ ΣΤΑ ΒΑΛΚΑΝΙΑ ΚΑΙ ΤΗ ΜΙΚΡΑ ΑΣΙΑ <span class="hours">8 ώρες</span></button>
+            <div class="nested-content">
+                <button type="button" class="sub-nested-collapsible">1. Η διαμόρφωση της μεσαιωνικής ελληνικής βυζαντινής αυτοκρατορίας <span class="hours">1 ώρα</span></button>
+                <div class="sub-nested-content">
+                    <p><strong>Διδασκαλία της ενότητας με έμφαση στα ακόλουθα σημεία:</strong></p>
+                    <ul>
+                        <li>Απόκρουση του αραβικού κινδύνου</li>
+                        <li>Διοικητικά και οικονομικά μέτρα</li>
+                        <li>Ανάκαμψη της οικονομίας</li>
+                    </ul>
+                    <div class="activity">
+                        <p><strong>Προτεινόμενες δραστηριότητες:</strong></p>
+                        <ul>
+                            <li>Ερωτήσεις 4 και 5 του βιβλίου</li>
+                            <li>Παιχνίδι ρόλων: Διάλογος για τις «κακώσεις» του Νικηφόρου Α΄</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <button type="button" class="sub-nested-collapsible">2. Η μεταβατική εποχή: Οι έριδες για το ζήτημα των εικόνων <span class="hours">2 ώρες</span></button>
+                <div class="sub-nested-content">
+                    <p><strong>Διδασκαλία της ενότητας με έμφαση στα ακόλουθα σημεία:</strong></p>
+                    <ul>
+                        <li>Ορισμός, πρωτεργάτες και παράγοντες</li>
+                        <li>Φάσεις και λήξη της εικονομαχίας</li>
+                        <li>Συνέπειες</li>
+                    </ul>
+                    <div class="material">
+                        <p><strong>Υποστηρικτικό υλικό:</strong></p>
+                        <ul>
+                            <li>Γραπτές πηγές σχολικού βιβλίου</li>
+                            <li><a href="http://photodentro.edu.gr/aggregator/lo/photodentro-lor-8521-1053" target="_blank">«Εικονομαχία (Συλλογή Εικόνων)»</a></li>
+                        </ul>
+                    </div>
+                    <div class="activity">
+                        <p><strong>Προτεινόμενη δραστηριότητα:</strong></p>
+                        <ul>
+                            <li>Παιχνίδι ρόλων: Επιχειρηµατολογία υπέρ και κατά της λατρείας των εικόνων</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <button type="button" class="sub-nested-collapsible">3. Η βασιλεία του Μιχαήλ Γ΄ και η αυγή της Νέας Εποχής <span class="hours">1 ώρα</span></button>
+                <div class="sub-nested-content">
+                    <p><strong>Διδασκαλία της ενότητας με έμφαση στα ακόλουθα σημεία:</strong></p>
+                    <ul>
+                        <li>Ίδρυση της Σχολής της Μαγναύρας</li>
+                        <li>Ενδιαφέρον για τους κλασικούς</li>
+                        <li>Αραβικοί πόλεμοι και επική ποίηση</li>
+                    </ul>
+                    <div class="material">
+                        <p><strong>Υποστηρικτικό υλικό:</strong></p>
+                        <ul>
+                            <li><a href="http://www.ime.gr/chronos/09/gr/sources/index.html" target="_blank">Απόσπασμα από τη Βιβλιοθήκη του Φωτίου</a></li>
+                        </ul>
+                    </div>
+                    <div class="activity">
+                        <p><strong>Προτεινόμενη δραστηριότητα:</strong></p>
+                        <ul>
+                            <li>Ερώτηση 5 του βιβλίου</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <button type="button" class="sub-nested-collapsible">4. Η διάδοση του Χριστιανισμού στους Μοραβούς και τους Βουλγάρους <span class="hours">1 ώρα</span></button>
+                <div class="sub-nested-content">
+                    <p><strong>Διδασκαλία της ενότητας με έμφαση στα ακόλουθα σημεία:</strong></p>
+                    <ul>
+                        <li>Η πορεία εκχριστιανισμού των Μοραβών και η σημασία της</li>
+                        <li>Ο εκχριστιανισμός των Βουλγάρων</li>
+                        <li>Το Σχίσμα του 867</li>
+                    </ul>
+                    <div class="material">
+                        <p><strong>Υποστηρικτικό υλικό:</strong></p>
+                        <ul>
+                            <li><a href="http://photodentro.edu.gr/v/item/ds/8521/9642" target="_blank">«Η αποστολή εκχριστιανισμού των Σλάβων»</a></li>
+                            <li><a href="http://photodentro.edu.gr/v/item/ds/8521/9641" target="_blank">«Οι διαφορές των δύο εκκλησιών»</a></li>
+                        </ul>
+                    </div>
+                    <div class="activity">
+                        <p><strong>Προτεινόμενες δραστηριότητες:</strong></p>
+                        <ul>
+                            <li>Ερωτήσεις 2 και 3 του βιβλίου</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <button type="button" class="sub-nested-collapsible">5. Η ίδρυση, η εξέλιξη και ο εκχριστιανισμός του Ρωσικού Κράτους <span class="hours">1 ώρα</span></button>
+                <div class="sub-nested-content">
+                    <p><strong>Διδασκαλία της ενότητας με έμφαση στα ακόλουθα σημεία:</strong></p>
+                    <ul>
+                        <li>Η διαμόρφωση του έθνους των Ρώσων</li>
+                        <li>Η ηγεμονία του Κιέβου και οι αποτυχημένες επιθέσεις κατά της Κωνσταντινούπολης</li>
+                        <li>Εκχριστιανισμός των Ρώσων</li>
+                    </ul>
+                    <div class="material">
+                        <p><strong>Υποστηρικτικό υλικό:</strong></p>
+                        <ul>
+                            <li>Χάρτης εμπορικών διαδρομών Βαράγγων</li>
+                            <li><a href="http://www.impantokratoros.gr/ierapostolh-rosia.el.aspx" target="_blank">«Η ιεραποστολή στη Ρωσία»</a></li>
+                        </ul>
+                    </div>
+                    <div class="activity">
+                        <p><strong>Προτεινόμενη δραστηριότητα:</strong></p>
+                        <ul>
+                            <li>Αφήγηση της Άννας κατά το ταξίδι της στη Χερσώνα</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <button type="button" class="sub-nested-collapsible">6. Η Βυζαντινή εποποιία. Επικοί αγώνες και επέκταση της Αυτοκρατορίας <span class="hours">1 ώρα</span></button>
+                <div class="sub-nested-content">
+                    <p><strong>Διδασκαλία της ενότητας με έμφαση στα ακόλουθα σημεία:</strong></p>
+                    <ul>
+                        <li>Οι αγώνες με Άραβες και Βούλγαρους</li>
+                        <li>Οι συνέπειες των πολέμων στο οικονομικό και κοινωνικό πεδίο</li>
+                    </ul>
+                    <div class="material">
+                        <p><strong>Υποστηρικτικό υλικό:</strong></p>
+                        <ul>
+                            <li><a href="https://byzantium.gr/empgrmaps.html" target="_blank">Χάρτες συγκρούσεων και εδαφικών αυξομειώσεων</a></li>
+                        </ul>
+                    </div>
+                    <div class="activity">
+                        <p><strong>Προτεινόμενες δραστηριότητες:</strong></p>
+                        <ul>
+                            <li>Χρονογραμμή με τις κυριότερες νίκες του Βυζαντίου</li>
+                            <li>Ερωτήσεις 1 και 2 του βιβλίου</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <button type="button" class="sub-nested-collapsible">7. Σχέσεις Βυζαντίου - Δύσης. Αγώνες για διατήρηση των ιταλικών κτήσεων <span class="hours">1 ώρα</span></button>
+                <div class="sub-nested-content">
+                    <p>Συνοπτική παρουσίαση της ενότητας.</p>
+                </div>
+            </div>
+            
+            <!-- ΙΙ. ΚΟΙΝΩΝΙΑ ΚΑΙ ΟΙΚΟΝΟΜΙΑ -->
+            <button type="button" class="nested-collapsible">ΙΙ. ΚΟΙΝΩΝΙΑ ΚΑΙ ΟΙΚΟΝΟΜΙΑ <span class="hours">1 ώρα</span></button>
+            <div class="nested-content">
+                <p><strong>Διδασκαλία των ενοτήτων με έμφαση στα ακόλουθα σημεία:</strong></p>
+                <ul>
+                    <li>Οι κοινωνικές τάξεις στην ύπαιθρο</li>
+                    <li>Η ανάπτυξη των πόλεων και των αστικών στρωμάτων</li>
+                    <li>Οι νόμοι κατά των δυνατών και η σημασία τους</li>
+                </ul>
+                <div class="material">
+                    <p><strong>Υποστηρικτικό υλικό:</strong></p>
+                    <ul>
+                        <li>Πηγές σχολικού βιβλίου</li>
+                        <li><a href="http://photodentro.edu.gr/v/item/ds/8521/9644" target="_blank">«Οι δυνατοί»</a></li>
+                    </ul>
+                </div>
+                <div class="activity">
+                    <p><strong>Προτεινόμενη δραστηριότητα:</strong></p>
+                    <ul>
+                        <li>Παιχνίδι ρόλων: Βυζαντινός αγρότης ζητά προστασία από «δυνατό»</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ΚΕΦΑΛΑΙΟ ΤΕΤΑΡΤΟ -->
+        <button type="button" class="collapsible">ΚΕΦΑΛΑΙΟ ΤΕΤΑΡΤΟ: ΠΕΡΙΟΔΟΣ ΤΗΣ ΚΡΙΣΗΣ ΤΟΥ ΒΥΖΑΝΤΙΟΥ (1025-1453)</button>
+        <div class="content">
+            <!-- Ι. Η ΕΞΑΣΘΕΝΗΣΗ ΤΟΥ ΒΥΖΑΝΤΙΟΥ -->
+            <button type="button" class="nested-collapsible">Ι. Η ΕΞΑΣΘΕΝΗΣΗ ΤΟΥ ΒΥΖΑΝΤΙΟΥ ΚΑΙ ΤΟ ΣΧΙΣΜΑ ΜΕ ΤΗ ΔΥΣΗ <span class="hours">6 ώρες</span></button>
+            <div class="nested-content">
+                <button type="button" class="sub-nested-collapsible">1. Η κρίση και οι απώλειες της αυτοκρατορίας κατά τον 11ο αιώνα (1025-1081) <span class="hours">2 ώρες</span></button>
+                <div class="sub-nested-content">
+                    <p>Συνοπτική παρουσίαση της ενότητας.</p>
+                </div>
+                
+                <button type="button" class="sub-nested-collapsible">2. Οι Κομνηνοί και η μερική αναδιοργάνωση της αυτοκρατορίας <span class="hours">2 ώρες</span></button>
+                <div class="sub-nested-content">
+                    <p><strong>Διδασκαλία της ενότητας με έμφαση στα ακόλουθα σημεία:</strong></p>
+                    <ul>
+                        <li>Οι εξωτερικοί εχθροί</li>
+                        <li>Ο θεσμός της Πρόνοιας</li>
+                        <li>Η ήττα στο Μυριοκέφαλο και οι συνέπειές της</li>
+                    </ul>
+                    <div class="material">
+                        <p><strong>Υποστηρικτικό υλικό:</strong></p>
+                        <ul>
+                            <li>Χάρτες συγκρούσεων και επεκτάσεων</li>
+                            <li>Πηγές από σχολικό βιβλίο (σελ. 56)</li>
+                        </ul>
+                    </div>
+                    <div class="activity">
+                        <p><strong>Προτεινόμενη δραστηριότητα:</strong></p>
+                        <ul>
+                            <li>Ερώτηση 3 του βιβλίου</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <button type="button" class="sub-nested-collapsible">3. Η ενετική οικονομική διείσδυση και το Σχίσμα των Εκκλησιών <span class="hours">2 ώρες</span></button>
+                <div class="sub-nested-content">
+                    <p><strong>Διδασκαλία της ενότητας με έμφαση στα ακόλουθα σημεία:</strong></p>
+                    <ul>
+                        <li>Τα εμπορικά προνόμια των Βενετών και οι συνέπειές τους</li>
+                        <li>Η τελική ρήξη Κωνσταντινούπολης - Ρώμης</li>
+                    </ul>
+                    <div class="material">
+                        <p><strong>Υποστηρικτικό υλικό:</strong></p>
+                        <ul>
+                            <li>Χάρτης εμπορικών δραστηριοτήτων Βενετών</li>
+                            <li><a href="http://photodentro.edu.gr/v/item/ds/8521/8820" target="_blank">«Το Σχίσμα του 1054»</a></li>
+                        </ul>
+                    </div>
+                    <div class="activity">
+                        <p><strong>Προτεινόμενες δραστηριότητες:</strong></p>
+                        <ul>
+                            <li>Ερωτήσεις 1 και 3 του βιβλίου</li>
+                            <li>Παιχνίδι ρόλων: Εκπρόσωποι των δύο Εκκλησιών για το Σχίσμα</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- ΙΙ. ΟΙ ΣΤΑΥΡΟΦΟΡΙΕΣ -->
+            <button type="button" class="nested-collapsible">ΙΙ. ΟΙ ΣΤΑΥΡΟΦΟΡΙΕΣ ΚΑΙ ΟΙ ΣΥΝΕΠΕΙΕΣ ΤΟΥΣ ΓΙΑ ΤΟ ΒΥΖΑΝΤΙΟ <span class="hours">4 ώρες</span></button>
+            <div class="nested-content">
+                <button type="button" class="sub-nested-collapsible">1. Οι Σταυροφορίες και η πρώτη άλωση της Πόλης <span class="hours">2 ώρες</span></button>
+                <div class="sub-nested-content">
+                    <p><strong>Διδασκαλία της ενότητας με έμφαση στα ακόλουθα σημεία:</strong></p>
+                    <ul>
+                        <li>Ορισμός και παράγοντες που τις προκάλεσαν</li>
+                        <li>Οι τρεις πρώτες Σταυροφορίες</li>
+                        <li>Η Τέταρτη Σταυροφορία και η Άλωση της Κωνσταντινούπολης</li>
+                    </ul>
+                    <div class="material">
+                        <p><strong>Υποστηρικτικό υλικό:</strong></p>
+                        <ul>
+                            <li><a href="http://ebooks.edu.gr/modules/ebook/show.php/DSGL-B131/756/4972,22661/" target="_blank">Πηγές από την Ιστορία Β΄ Λυκείου</a></li>
+                            <li><a href="http://www.netschoolbook.gr/history2007/c7-crus-sources6.html" target="_blank">Ιστορικές πηγές</a></li>
+                            <li><a href="http://photodentro.edu.gr/v/item/ds/8521/8975" target="_blank">«Σταυροφορίες»</a></li>
+                        </ul>
+                    </div>
+                    <div class="activity">
+                        <p><strong>Προτεινόμενη δραστηριότητα:</strong></p>
+                        <ul>
+                            <li>Παιχνίδι ρόλων: Χωρικός εξηγεί τους λόγους συμμετοχής σε Σταυροφορία</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <button type="button" class="sub-nested-collapsible">2. Η περίοδος της Λατινοκρατίας και τα ελληνικά κράτη <span class="hours">2 ώρες</span></button>
+                <div class="sub-nested-content">
+                    <p><strong>Διδασκαλία της ενότητας με έμφαση στα ακόλουθα σημεία:</strong></p>
+                    <ul>
+                        <li>Τα λατινικά και ελληνικά κράτη μετά το 1204</li>
+                        <li>Η νέα ιδεολογία και η ανάκτηση της Πόλης</li>
+                    </ul>
+                    <div class="material">
+                        <p><strong>Υποστηρικτικό υλικό:</strong></p>
+                        <ul>
+                            <li>Χάρτες ελληνικών κρατών μετά το 1204</li>
+                            <li><a href="https://www.culture.gov.gr/mystras-edu/history/03.html" target="_blank">«Καστροπολιτεία Μυστρά»</a></li>
+                            <li><a href="http://exploringbyzantium.gr/EKBMM/Page?name=monument&lang=gr&id=5&sub=651&sub2=292" target="_blank">Πολιτιστικές διαδρομές</a></li>
+                            <li><a href="http://www.netschoolbook.gr/" target="_blank">Πηγές</a></li>
+                        </ul>
+                    </div>
+                    <div class="activity">
+                        <p><strong>Προτεινόμενη δραστηριότητα:</strong></p>
+                        <ul>
+                            <li>Αναζήτηση καταλοίπων λατινικής παρουσίας στην περιοχή των μαθητών</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ΙΙΙ. ΑΝΑΣΥΣΤΑΣΗ ΒΥΖΑΝΤΙΟΥ -->
+            <button type="button" class="nested-collapsible">ΙΙΙ. ΑΝΑΣΥΣΤΑΣΗ ΒΥΖΑΝΤΙΟΥ ΚΑΙ ΥΠΟΤΑΓΗ ΣΤΟΥΣ ΟΘΩΜΑΝΟΥΣ <span class="hours">3 ώρες</span></button>
+            <div class="nested-content">
+                <button type="button" class="sub-nested-collapsible">1. Εξάπλωση των Τούρκων και τελευταίες προσπάθειες ανάσχεσης <span class="hours">1 ώρα</span></button>
+                <div class="sub-nested-content">
+                    <p><strong>Διδασκαλία της ενότητας με έμφαση στα ακόλουθα σημεία:</strong></p>
+                    <ul>
+                        <li>Οι Τούρκοι και οι λόγοι της εξάπλωσής τους</li>
+                        <li>Προσπάθειες ανάσχεσης και τα αποτελέσματά τους</li>
+                    </ul>
+                    <div class="material">
+                        <p><strong>Υποστηρικτικό υλικό:</strong></p>
+                        <ul>
+                            <li><a href="http://photodentro.edu.gr/v/item/ds/8521/9360" target="_blank">«Οι Οθωμανοί Τούρκοι»</a></li>
+                        </ul>
+                    </div>
+                    <div class="activity">
+                        <p><strong>Προτεινόμενες δραστηριότητες:</strong></p>
+                        <ul>
+                            <li>Ερώτηση 1 του βιβλίου</li>
+                            <li>Παιχνίδι ρόλων: Συζήτηση για ευρωπαϊκή βοήθεια κατά την Άλωση</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <button type="button" class="sub-nested-collapsible">2. Η Άλωση της Πόλης <span class="hours">2 ώρες</span></button>
+                <div class="sub-nested-content">
+                    <p><strong>Διδασκαλία της ενότητας με έμφαση στα ακόλουθα σημεία:</strong></p>
+                    <ul>
+                        <li>Η πολιορκία και η άλωση</li>
+                        <li>Οι συνέπειες</li>
+                        <li>Η πνευματική κληρονομιά του Βυζαντίου</li>
+                    </ul>
+                    <div class="material">
+                        <p><strong>Υποστηρικτικό υλικό:</strong></p>
+                        <ul>
+                            <li><a href="http://ebooks.edu.gr/modules/ebook/show.php/DSGL-B131/756/4973,22668/" target="_blank">Πηγές από την Ιστορία Β΄ Λυκείου</a></li>
+                            <li><a href="http://photodentro.edu.gr/lor/r/8521/8801" target="_blank">«Η Άλωση της Κωνσταντινούπολης»</a></li>
+                        </ul>
+                    </div>
+                    <div class="activity">
+                        <p><strong>Προτεινόμενη δραστηριότητα:</strong></p>
+                        <ul>
+                            <li>Μελέτη πηγών για τις αντιλήψεις του λαού για την Άλωση</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ΚΕΦΑΛΑΙΟ ΠΕΜΠΤΟ -->
+        <button type="button" class="collapsible">ΚΕΦΑΛΑΙΟ ΠΕΜΠΤΟ: Η ΕΥΡΩΠΗ ΚΑΤΑ ΤΟΝ ΜΕΣΑΙΩΝΑ</button>
+        <div class="content">
+            <!-- Ι. ΟΙ ΒΑΣΕΙΣ ΤΗΣ ΜΕΣΑΙΩΝΙΚΗΣ ΕΥΡΩΠΗΣ -->
+            <button type="button" class="nested-collapsible">Ι. ΟΙ ΒΑΣΕΙΣ ΤΗΣ ΜΕΣΑΙΩΝΙΚΗΣ ΕΥΡΩΠΗΣ <span class="hours">1 ώρα</span></button>
+            <div class="nested-content">
+                <p><strong>Διδασκαλία των ενοτήτων με έμφαση στα ακόλουθα σημεία:</strong></p>
+                <ul>
+                    <li>1. Οι Γερμανικοί λαοί και η ίδρυση των πρώτων βασιλείων</li>
+                    <li>2. Το Καρολίδειο κράτος και η αναβίωση της αυτοκρατορίας</li>
+                </ul>
+                <div class="material">
+                    <p><strong>Υποστηρικτικό υλικό:</strong></p>
+                    <ul>
+                        <li>Χάρτης πρώτων γερμανικών βασιλείων</li>
+                        <li><a href="http://photodentro.edu.gr/v/item/ds/8521/9322" target="_blank">«Ο Κάρολος και η ανασύσταση της Ρωμαϊκής Αυτοκρατορίας»</a></li>
+                    </ul>
+                </div>
+                <div class="activity">
+                    <p><strong>Προτεινόμενη δραστηριότητα:</strong></p>
+                    <ul>
+                        <li>Ερώτηση 3 του βιβλίου</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- ΙΙ. Η ΦΕΟΥΔΑΡΧΙΚΗ ΟΡΓΑΝΩΣΗ -->
+            <button type="button" class="nested-collapsible">ΙΙ. Η ΦΕΟΥΔΑΡΧΙΚΗ ΟΡΓΑΝΩΣΗ ΤΗΣ ΕΥΡΩΠΗΣ <span class="hours">2 ώρες</span></button>
+            <div class="nested-content">
+                <p><strong>Διδασκαλία των ενοτήτων με έμφαση στα ακόλουθα σημεία:</strong></p>
+                <ul>
+                    <li>1. Ο φεουδαρχικός κατακερματισμός</li>
+                    <li>2. Οι αγρότες και οι υποχρεώσεις τους</li>
+                </ul>
+                <div class="material">
+                    <p><strong>Υποστηρικτικό υλικό:</strong></p>
+                    <ul>
+                        <li>Σχεδιαγράμματα φεουδαρχικής ιεραρχίας</li>
+                        <li>Εικαστικό υλικό για ζωή αγροτών</li>
+                        <li>Πηγές σχολικού βιβλίου</li>
+                        <li><a href="http://photodentro.edu.gr/v/item/ds/8521/9303" target="_blank">«Η κοινωνική διαστρωμάτωση στη φεουδαρχία»</a></li>
+                    </ul>
+                </div>
+                <div class="activity">
+                    <p><strong>Προτεινόμενη δραστηριότητα:</strong></p>
+                    <ul>
+                        <li>Παιχνίδι ρόλων: Αναπαράσταση ρόλων σε φεουδαρχική κοινωνία</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- ΙΙΙ. Η ΑΝΑΠΤΥΞΗ ΤΗΣ ΕΥΡΩΠΑΪΚΗΣ ΟΙΚΟΝΟΜΙΑΣ -->
+            <button type="button" class="nested-collapsible">ΙΙΙ. Η ΑΝΑΠΤΥΞΗ ΤΗΣ ΕΥΡΩΠΑΪΚΗΣ ΟΙΚΟΝΟΜΙΑΣ <span class="hours">1 ώρα</span></button>
+            <div class="nested-content">
+                <p><strong>Διδασκαλία των ενοτήτων με έμφαση στα ακόλουθα σημεία:</strong></p>
+                <ul>
+                    <li>1. Η ανάπτυξη της γεωργίας και η αναγέννηση των πόλεων</li>
+                    <li>2. Η ανάπτυξη του εμπορίου και της ναυτιλίας</li>
+                </ul>
+                <div class="material">
+                    <p><strong>Υποστηρικτικό υλικό:</strong></p>
+                    <ul>
+                        <li>Χάρτες εμπορικών δρόμων</li>
+                        <li><a href="http://photodentro.edu.gr/v/item/ds/8521/8805" target="_blank">«Μεσαιωνικές πόλεις»</a></li>
+                        <li><a href="https://www.ertflix.gr/psychagogia/i-istoria-ehei-prosopo" target="_blank">Βίντεο: «Η Φλωρεντία στον Μεσαίωνα»</a></li>
+                    </ul>
+                </div>
+                <div class="activity">
+                    <p><strong>Προτεινόμενη δραστηριότητα:</strong></p>
+                    <ul>
+                        <li>Δημιουργία χάρτη με εμπορικούς δρόμους και πόλεις</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- IV. Η ΠΝΕΥΜΑΤΙΚΗ ΚΑΙ ΚΑΛΛΙΤΕΧΝΙΚΗ ΠΡΟΟΔΟΣ -->
+            <button type="button" class="nested-collapsible">IV. Η ΠΝΕΥΜΑΤΙΚΗ ΚΑΙ ΚΑΛΛΙΤΕΧΝΙΚΗ ΠΡΟΟΔΟΣ ΤΟΥ ΜΕΣΑΙΩΝΑ <span class="hours">1 ώρα</span></button>
+            <div class="nested-content">
+                <p><strong>Διδασκαλία των ενοτήτων με έμφαση στα ακόλουθα σημεία:</strong></p>
+                <ul>
+                    <li>1. Η ίδρυση των πανεπιστημίων και η ανάπτυξη των επιστημών</li>
+                    <li>2. Η μεσαιωνική τέχνη</li>
+                </ul>
+                <div class="material">
+                    <p><strong>Υποστηρικτικό υλικό:</strong></p>
+                    <ul>
+                        <li>Εικόνες μεσαιωνικής τέχνης και αρχιτεκτονικής</li>
+                        <li><a href="http://photodentro.edu.gr/v/item/ds/8521/8823" target="_blank">«Γοτθικός Καθεδρικός της Σαρτρ»</a></li>
+                        <li><a href="http://photodentro.edu.gr/v/item/ds/8521/8824" target="_blank">«Ανάλυση μεσαιωνικής τοιχογραφίας»</a></li>
+                    </ul>
+                </div>
+                <div class="activity">
+                    <p><strong>Προτεινόμενες δραστηριότητες:</strong></p>
+                    <ul>
+                        <li>Δημιουργία παρουσίασης για μεσαιωνική τέχνη</li>
+                        <li>Ερώτηση 4 του βιβλίου</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ΚΕΦΑΛΑΙΟ ΕΚΤΟ -->
+        <button type="button" class="collapsible">ΚΕΦΑΛΑΙΟ ΕΚΤΟ: ΑΠΟ ΤΟΝ ΜΕΣΑΙΩΝΑ ΣΤΟΥΣ ΝΕΟΤΕΡΟΥΣ ΧΡΟΝΟΥΣ</button>
+        <div class="content">
+            <!-- Ι. Η ΑΝΑΔΙΑΜΟΡΦΩΣΗ ΤΗΣ ΕΥΡΩΠΗΣ -->
+            <button type="button" class="nested-collapsible">Ι. Η ΑΝΑΔΙΑΜΟΡΦΩΣΗ ΤΗΣ ΕΥΡΩΠΗΣ <span class="hours">4 ώρες</span></button>
+            <div class="nested-content">
+                <button type="button" class="sub-nested-collapsible">1. Η Αναγέννηση και η Θρησκευτική Μεταρρύθμιση <span class="hours">2 ώρες</span></button>
+                <div class="sub-nested-content">
+                    <p><strong>Διδασκαλία της ενότητας με έμφαση στα ακόλουθα σημεία:</strong></p>
+                    <ul>
+                        <li>Η έννοια και τα χαρακτηριστικά της Αναγέννησης</li>
+                        <li>Οι σημαντικότεροι καλλιτέχνες και επιστήμονες της εποχής</li>
+                        <li>Η Θρησκευτική Μεταρρύθμιση και οι συνέπειές της</li>
+                    </ul>
+                    <div class="material">
+                        <p><strong>Υποστηρικτικό υλικό:</strong></p>
+                        <ul>
+                            <li>Πίνακες και έργα Αναγέννησης</li>
+                            <li>Απόσπασμα από τα «95 Θέσεις» του Λουθήρου</li>
+                            <li><a href="http://photodentro.edu.gr/v/item/ds/8521/9297" target="_blank">«Η Αναγέννηση»</a></li>
+                            <li><a href="https://www.timetoast.com/timelines/renaissance-32fd4c52-2fc7-4db1-951b-66ef47c39272" target="_blank">Διαδραστικό Χρονολόγιο Αναγέννησης</a></li>
+                        </ul>
+                    </div>
+                    <div class="activity">
+                        <p><strong>Προτεινόμενες δραστηριότητες:</strong></p>
+                        <ul>
+                            <li>Δημιουργία αφίσας «Η Αναγέννηση»</li>
+                            <li>Παιχνίδι ρόλων: Λούθηρος vs Καθολική Εκκλησία</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <button type="button" class="sub-nested-collapsible">2. Οι γεωγραφικές ανακαλύψεις και η έναρξη της ευρωπαϊκής αποικιοκρατίας <span class="hours">2 ώρες</span></button>
+                <div class="sub-nested-content">
+                    <p><strong>Διδασκαλία της ενότητας με έμφαση στα ακόλουθα σημεία:</strong></p>
+                    <ul>
+                        <li>Παράγοντες που οδήγησαν στις ανακαλύψεις</li>
+                        <li>Οι σημαντικότερες αποστολές και οι επιπτώσεις τους</li>
+                        <li>Οι συνέπειες για την Ευρώπη και τους ιθαγενείς πληθυσμούς</li>
+                    </ul>
+                    <div class="material">
+                        <p><strong>Υποστηρικτικό υλικό:</strong></p>
+                        <ul>
+                            <li>Χάρτης εξερευνήσεων</li>
+                            <li>Απόσπασμα από ημερολόγιο του Κολόμβου</li>
+                            <li><a href="http://photodentro.edu.gr/v/item/ds/8521/9285" target="_blank">«Γεωγραφικές ανακαλύψεις»</a></li>
+                            <li><a href="http://www.bbc.co.uk/history/british/tudors/launch_ani_trade_routes.shtml" target="_blank">Χρονολόγιο Ανακαλύψεων (BBC)</a></li>
+                        </ul>
+                    </div>
+                    <div class="activity">
+                        <p><strong>Προτεινόμενες δραστηριότητες:</strong></p>
+                        <ul>
+                            <li>Διάγραμμα αποστολών και εξερευνητών</li>
+                            <li>Παιχνίδι ρόλων: Θαλασσοπόροι αφηγούνται εμπειρίες</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const collapsibles = document.getElementsByClassName('collapsible');
+            const nestedCollapsibles = document.getElementsByClassName('nested-collapsible');
+            const subNestedCollapsibles = document.getElementsByClassName('sub-nested-collapsible');
+            
+            // Add click event for main collapsibles
+            for (let i = 0; i < collapsibles.length; i++) {
+                collapsibles[i].addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('active');
+                });
+            }
+            
+            // Add click event for nested collapsibles
+            for (let i = 0; i < nestedCollapsibles.length; i++) {
+                nestedCollapsibles[i].addEventListener('click', function() {
+                    this.classList.toggle('nested-active');
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('active');
+                });
+            }
+            
+            // Add click event for sub-nested collapsibles
+            for (let i = 0; i < subNestedCollapsibles.length; i++) {
+                subNestedCollapsibles[i].addEventListener('click', function() {
+                    this.classList.toggle('sub-nested-active');
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
